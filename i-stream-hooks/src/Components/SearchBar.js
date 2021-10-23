@@ -11,12 +11,8 @@ const SearchBar = ({ passPropToParent }) => {
   };
 
   useEffect(() => {
-    const makeRequest = async () => {
-      passPropToParent(await makeApiRequest("programming"));
-    };
-
-    makeRequest();
-  });
+    passPropToParent(makeApiRequest("programming"));
+  }, []);
 
   return (
     <div className="search-bar ui segment">
