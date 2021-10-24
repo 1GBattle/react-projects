@@ -1,40 +1,40 @@
-import React, { useEffect } from "react";
-import { fetchPosts } from "../actions";
-import { connect } from "react-redux";
-import UserHeader from "./UserHeader";
+import React, { useEffect } from 'react'
+import { fetchPostsAndUsers } from '../actions'
+import { connect } from 'react-redux'
+import UserHeader from './UserHeader'
 
-const BlogPostList = ({ fetchPosts, blogPosts }) => {
+const BlogPostList = ({ fetchPostsAndUsers, blogPosts }) => {
   useEffect(() => {
-    console.log("blogPosts component mounted");
-    fetchPosts();
-  }, [fetchPosts]);
+    console.log('blogPosts component mounted')
+    fetchPostsAndUsers()
+  }, [fetchPostsAndUsers])
 
   const renderList = () => {
     return blogPosts.length > 0
       ? blogPosts.map((blogPost) => {
           return (
-            <div className="item" key={blogPost.id}>
-              <i className={"large middle aligned icon user"} />
-              <div className={"content"}>
-                <div className={"description"}>
+            <div className='item' key={blogPost.id}>
+              <i className={'large middle aligned icon user'} />
+              <div className={'content'}>
+                <div className={'description'}>
                   <h2>{blogPost.title}</h2>
                   <p>{blogPost.body}</p>
                 </div>
               </div>
               <UserHeader usedId={blogPost.userId} />
             </div>
-          );
+          )
         })
-      : null;
-  };
+      : null
+  }
 
-  return <div className={"ui relaxed divided list"}>{renderList()}</div>;
-};
+  return <div className={'ui relaxed divided list'}>{renderList()}</div>
+}
 
 const mapStateToProps = (state) => {
   return {
-    blogPosts: state.posts,
-  };
-};
+    blogPosts: state.posts
+  }
+}
 
-export default connect(mapStateToProps, { fetchPosts })(BlogPostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(BlogPostList)
