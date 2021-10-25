@@ -1,31 +1,23 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-const P1 = () => {
-  return (
-    <div>
-      page1
-      <a href='/pagetwo'>Nav to Page 2</a>
-    </div>
-  )
-}
-
-const P2 = () => {
-  return (
-    <div>
-      page2
-      <a href='/'>Nav to Page 1</a>
-    </div>
-  )
-}
+import NavigationBar from './Components/NavigationBar/NavigationBar'
+import StreamCreate from './Components/Stream/StreamCreate'
+import StreamDelete from './Components/Stream/StreamDelete'
+import StreamList from './Components/Stream/StreamList'
+import StreamShow from './Components/Stream/StreamShow'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <div>
-          <Route path='/' exact component={P1} />
-          <Route path='/pagetwo' exact component={P2} />
+          <NavigationBar />
+
+          <Route path='/streamlist' exact component={StreamList} />
+          <Route path='/createstream' exact component={StreamCreate} />
+          <Route path='/deletestream' exact component={StreamDelete} />
+          <Route path='/showstream' exact component={StreamShow} />
         </div>
       </BrowserRouter>
     </div>
