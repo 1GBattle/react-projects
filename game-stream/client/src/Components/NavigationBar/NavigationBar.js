@@ -1,11 +1,23 @@
 import React from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+import GoogleAuth from '../Api/GoogleAuth'
 
 const NavigationBar = () => {
   return (
-    <div>
-      <Link to={'/createstream'}>Create Stream</Link>
-      <Link to={'/showstream'}>Show Streams</Link>
+    <div className='ui secondary pointing menu'>
+      <Link to='/' className='item'>
+        Streamer
+      </Link>
+      <div className='right menu'>
+        <Link to='/' className='item'>
+          Show Streams
+        </Link>
+        <GoogleAuth className='item' />
+        <Link to='/stream/create' className='item'>
+          Create Stream
+        </Link>
+      </div>
     </div>
   )
 }
