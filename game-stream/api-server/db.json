@@ -1,0 +1,44 @@
+{
+  "streams": [
+    {
+      "title": "Title",
+      "description": "Desc",
+      "id": 1
+    },
+    {
+      "title": "Title",
+      "description": "Desc",
+      "id": 2
+    },
+    {
+      "title": "title",
+      "description": "descr",
+      "id": 3
+    },
+    {
+      "title": "title",
+      "description": "descr",
+      "id": 4
+    },
+    {
+      "title": "title",
+      "description": "descr",
+      "id": 5
+    },
+    {
+      "title": "Some title",
+      "description": "Some descr",
+      "id": 6
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "id": 7
+    },
+    {
+      "title": "ssldvklskvlsdkvdlsvksldvkdlskv",
+      "description": "some description",
+      "id": 10
+    }
+  ]
+}
