@@ -14,9 +14,9 @@ const NavigationBar = () => {
           Show Streams
         </Link>
         <GoogleAuth className='item' />
-        <Link to='/stream/create' className='item'>
+        {/* <Link to='/stream/create' className='item'>
           Create Stream
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

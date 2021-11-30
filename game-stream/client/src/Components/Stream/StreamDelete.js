@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { deleteStream } from '../../actions'
+import { deleteStream, getStream } from '../../actions'
 import history from '../../history'
 import Modal from '../Modal'
 
-const StreamDelete = ({ deleteStream, stream, ...props }) => {
+const StreamDelete = ({ deleteStream, stream, getStream, ...props }) => {
+  useEffect(() => {
+    getStream(props.match.params.id)
+  }, [getStream])
+
   const handleClick = () => {
     deleteStream(props.match.params.id)
   }
@@ -23,17 +27,23 @@ const StreamDelete = ({ deleteStream, stream, ...props }) => {
     </React.Fragment>
   )
 
+  const renderModalContent = () => {
+    if (stream) {
+      return `Are you sure you want to delete "${stream.title}" stream? This action cannot be undone.`
+    } else {
+      return 'Are you sure you want to delete this stream'
+    }
+  }
+
   return (
     <div>
-      {stream ? (
-        <Modal
-          headerMessage={'Delete Stream'}
-          contentMessage={`Are you sure you want to delete "${stream.title}" stream? This action cannot be undone. `}
-          actions={actions}
-          onDismiss={onDismiss}
-          streamTitle={stream.title}
-        />
-      ) : null}
+      <Modal
+        headerMessage={'Delete Stream'}
+        contentMessage={renderModalContent()}
+        actions={actions}
+        onDismiss={onDismiss}
+        streamTitle={stream.title}
+      />
     </div>
   )
 }
@@ -44,4 +54,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, { deleteStream })(StreamDelete)
+export default connect(mapStateToProps, { deleteStream, getStream })(StreamDelete)
