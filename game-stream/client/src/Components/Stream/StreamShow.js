@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { getStream } from '../../actions'
 
-const StreamShow = () => {
+const StreamShow = ({ props }) => {
+  useEffect(() => {
+    getStream(props.match.params.id)
+  })
+
   return (
     <div>
       <p>StreamShow</p>
@@ -8,4 +14,10 @@ const StreamShow = () => {
   )
 }
 
-export default StreamShow
+const mapStateToProps = (state, ownProps) => {
+  return {
+    stream: state.streams[ownProps.match.params.id]
+  }
+}
+
+export default connect(null, { getStream })(StreamShow)
