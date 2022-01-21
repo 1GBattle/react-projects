@@ -29,6 +29,11 @@ const Nav = () => {
               </a>
             </li>
           </ul>
+
+          <button class='mobile-nav-btn'>
+            <ion-icon class='mobile-nav-icon' name='menu-outline'></ion-icon>
+            <ion-icon class='mobile-nav-icon' name='close-outline'></ion-icon>
+          </button>
         </nav>
       </header>
     </div>

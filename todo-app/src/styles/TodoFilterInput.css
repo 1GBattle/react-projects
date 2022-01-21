@@ -1,0 +1,28 @@
+.filter-input-container {
+  display: flex;
+  width: 100%;
+
+  margin-right: auto;
+  padding-left: 32px;
+
+  justify-content: left;
+}
+
+.filter-input {
+  width: 50%;
+  height: 32px;
+}
+
+.filter-todo-btn {
+  font-weight: bold;
+  margin-left: 12px;
+  border-radius: 11px;
+
+  background-color: #00ccff;
+  color: white;
+}
+
+.filter-todo-btn:active,
+.filter-todo-btn:hover {
+  background-color: #03566b;
+}

@@ -51,3 +51,23 @@
 .main-nav-element.nav-cta:active {
   background-color: #cf711f;
 }
+
+.mobile-nav-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.mobile-nav-icon {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+.mobile-nav-icon[name='close-outline'] {
+  display: none;
+}
+
+.mobile-nav-icon[name='menu-outline'] {
+  display: none;
+}
