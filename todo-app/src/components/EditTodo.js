@@ -1,32 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { QuantityPicker } from 'react-qty-picker'
 import { Link } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 
-import '../styles/CreateTodo.css'
+const EditTodo = ({ match, todos, setTodo }) => {
+  const [selectedTodo, setSelectedTodo] = useState(
+    todos.map((todo) => todo).find((todo) => todo.id === match.params.id)
+  )
 
-const CreateTodo = ({ todos, setTodos }) => {
-  const [createdTodo, setCreatedTodo] = useState([])
-
-  const setNewTodoTitle = (todoTitle) => {
-    setCreatedTodo({ ...createdTodo, title: todoTitle })
+  const handleTodoUpdate = () => {
+    setTodo(todos.map((todo) => (todo.id === match.params.id ? selectedTodo : todo)))
   }
-
-  const setNewTodoContent = (todoContent) => {
-    setCreatedTodo({ ...createdTodo, content: todoContent })
-  }
-
-  const setNewTodoPriority = (todoPriority) => {
-    setCreatedTodo({ ...createdTodo, priority: parseInt(todoPriority) })
-  }
-
-  useEffect(() => {
-    setCreatedTodo({ ...createdTodo, id: uuidv4() })
-  }, [])
 
   return (
     <div className='create-todo-container box-shadow'>
-      <h2 className='create-todo-title'>Create A New Todo</h2>
+      <h2 className='create-todo-title'>Edit</h2>
 
       <div className='grid grid--2-cols-uneven input-fields-container'>
         <div className='input-field title-field'>
@@ -35,8 +22,11 @@ const CreateTodo = ({ todos, setTodos }) => {
             <input
               className='todo-title-input'
               placeholder='New Todo Title'
-              value={createdTodo.title}
-              onChange={(e) => setNewTodoTitle(e.target.value)}
+              value={selectedTodo.title}
+              onChange={(e) =>
+                setSelectedTodo({ ...selectedTodo, title: e.target.value })
+              }
+              // onChange={(e) => handleTitleChange(selectedTodo)}
             />
           </div>
 
@@ -46,8 +36,10 @@ const CreateTodo = ({ todos, setTodos }) => {
               smooth
               min={1}
               max={10}
-              value={1}
-              onChange={(value) => setNewTodoPriority(value)}
+              value={selectedTodo.priority}
+              onChange={(value) =>
+                setSelectedTodo({ ...selectedTodo, priority: value })
+              }
             />
           </div>
         </div>
@@ -56,8 +48,10 @@ const CreateTodo = ({ todos, setTodos }) => {
           <label className='input-field-label'>Content</label>
           <textarea
             className='todo-content-input'
-            value={createdTodo.content}
-            onChange={(e) => setNewTodoContent(e.target.value)}
+            value={selectedTodo.content}
+            onChange={(e) =>
+              setSelectedTodo({ ...selectedTodo, content: e.target.value })
+            }
           />
         </div>
       </div>
@@ -66,13 +60,13 @@ const CreateTodo = ({ todos, setTodos }) => {
         <Link
           to='/'
           className='btn submit-create-todo-button'
-          onClick={() => setTodos([...todos, createdTodo])}
+          onClick={handleTodoUpdate}
         >
-          Create Todo
+          Confirm Edit
         </Link>
       </div>
     </div>
   )
 }
 
-export default CreateTodo
+export default EditTodo

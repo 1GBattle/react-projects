@@ -7,9 +7,19 @@ import '../styles/TodoList.css'
 import Todos from './Todos'
 
 const TodoList = ({ todos, setTodos }) => {
+  const displayAddTodoMessage = () => {
+    if (todos.length === 0) {
+      return (
+        <div>
+          <h2 className='add-todo-message'>Add a task to get started</h2>
+        </div>
+      )
+    }
+  }
+
   return (
     <div className='todo-list-container'>
-      <h2 className='box-title'>Notes</h2>
+      <h2 className='box-title'>The Todo App</h2>
 
       <div className='todo-list-header-controls'>
         <div className='todo-search-bar'>
@@ -23,7 +33,10 @@ const TodoList = ({ todos, setTodos }) => {
         </div>
       </div>
 
+      <h4 className='box-description'>Notes</h4>
+
       <div>
+        {displayAddTodoMessage()}
         <Todos todos={todos} setTodos={setTodos} />
       </div>
     </div>

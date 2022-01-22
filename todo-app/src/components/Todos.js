@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-import '../styles/Todo.css'
+import '../styles/Todos.css'
 
 const Todos = ({ todos, setTodos }) => {
   const deleteTodo = (todoId) => {
@@ -19,7 +20,9 @@ const Todos = ({ todos, setTodos }) => {
             <h2 className='todo-title'>{todo.title}</h2>
 
             <div className='button-container'>
-              <button className='btn todo-edit-btn'>Edit</button>
+              <Link to={`/edit/${todo.id}`} className='btn todo-edit-btn'>
+                Edit
+              </Link>
               <button
                 className='btn todo-delete-btn'
                 onClick={() => deleteTodo(todo.id)}
@@ -27,6 +30,10 @@ const Todos = ({ todos, setTodos }) => {
                 Delete
               </button>
             </div>
+          </div>
+
+          <div>
+            <p className='todo-priority'>Priority: {todo.priority}</p>
           </div>
 
           <p className='todo-content'>{todo.content}</p>

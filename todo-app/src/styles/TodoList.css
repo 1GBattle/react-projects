@@ -1,6 +1,7 @@
 .todo-list-container {
-  margin-top: 56px;
+  margin-top: 12px;
   height: auto;
+  min-height: 300px;
   max-width: auto;
   border: 1px solid #0000;
   box-shadow: -1px 6px 6px rgba(0, 0, 0, 0.575);
@@ -8,8 +9,21 @@
   background-color: #00ccff;
 }
 
+.add-todo-message {
+  font-size: 54px;
+  text-align: center;
+  color: white;
+}
+
 .box-title {
+  font-size: 54px;
   margin-bottom: 16px;
+  text-align: center;
+  color: white;
+}
+
+.box-description {
+  font-size: 24px;
   text-align: center;
   color: white;
 }
@@ -33,43 +47,4 @@
   font-size: 32px;
   color: white;
   margin-right: 64px;
-}
-
-.todo-container {
-  border: 1px solid black;
-  border-radius: 9px;
-
-  margin: 54px;
-  padding: 12px 12px;
-
-  background-color: rgb(53, 53, 53);
-  box-shadow: -1px 6px 6px rgba(0, 0, 0, 0.575);
-
-  color: white;
-}
-
-.todo-header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  /* top: 50%; */
-}
-
-.todo-title {
-  font-size: 32px;
-}
-
-.button-container {
-  align-items: center;
-  gap: 24px;
-}
-
-.todo-edit-btn,
-.todo-delete-btn {
-  font-size: 24px;
-  height: 36px;
-  color: white;
-
-  background: none;
 }

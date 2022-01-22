@@ -4,37 +4,17 @@ import { Route, BrowserRouter } from 'react-router-dom'
 import {} from 'react-router-dom'
 
 import CreateTodo from './components/CreateTodo'
+import EditTodo from './components/EditTodo'
 import Header from './components/Header'
 import TodoList from './components/TodoList'
 
 import './styles/App.css'
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: 'New Todo',
-      content: 'Some todo content here'
-    },
-
-    {
-      id: 2,
-      title: 'Some Other Todo',
-      content:
-        'Some random generated content here for the use of just putting random content and filling a space'
-    },
-
-    {
-      id: 3,
-      title: 'Some random todo',
-      content: 'random content to be put into the unused space inside of the box'
-    }
-  ])
+  const [todos, setTodos] = useState([])
 
   return (
     <div>
-      <Header />
-
       <BrowserRouter>
         <Switch>
           <Route
@@ -47,6 +27,14 @@ function App() {
             exact
             path='/createtodo'
             component={() => <CreateTodo todos={todos} setTodos={setTodos} />}
+          />
+
+          <Route
+            exact
+            path='/edit/:id'
+            render={(props) => (
+              <EditTodo {...props} todos={todos} setTodo={setTodos} />
+            )}
           />
         </Switch>
       </BrowserRouter>
