@@ -26,7 +26,6 @@ const EditTodo = ({ match, todos, setTodo }) => {
               onChange={(e) =>
                 setSelectedTodo({ ...selectedTodo, title: e.target.value })
               }
-              // onChange={(e) => handleTitleChange(selectedTodo)}
             />
           </div>
 

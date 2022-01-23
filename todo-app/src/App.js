@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { Switch } from 'react-router-dom'
 import { Route, BrowserRouter } from 'react-router-dom'
-import {} from 'react-router-dom'
 
 import CreateTodo from './components/CreateTodo'
 import EditTodo from './components/EditTodo'
-import Header from './components/Header'
 import TodoList from './components/TodoList'
 
 import './styles/App.css'
