@@ -1,0 +1,37 @@
+.todo-item-container {
+  margin-bottom: 12px;
+  padding: 12px 12px;
+  max-height: 125px;
+
+  border-bottom: 1px solid black;
+}
+
+.todo-item-container:last-child {
+  border-bottom: none;
+}
+
+.todo-item-buttons-container {
+  display: flex;
+  gap: 12px;
+}
+
+.edit-todo-btn {
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 11px;
+  color: black;
+  padding: 4px;
+}
+
+.delete-todo-btn {
+  border: none;
+  background: none;
+
+  font-size: 20px;
+  border-radius: 11px;
+}
+
+.todo-item-title {
+  margin-top: 0;
+}

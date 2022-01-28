@@ -1,0 +1,8 @@
+.page-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  height: 1000px;
+  width: 1200px;
+}

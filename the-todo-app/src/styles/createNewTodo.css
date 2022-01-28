@@ -1,0 +1,84 @@
+label {
+  text-align: center;
+  font-size: 24px;
+}
+
+.create-new-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-new-container {
+  width: 600px;
+  height: 400px;
+
+  border: 1px solid black;
+  border-radius: 24px;
+  background-color: #00ccff;
+  box-shadow: 6px -12px 12px rgba(0, 0, 0, 0.5);
+
+  padding: 12px;
+  margin-top: 48px;
+
+  overflow-y: auto;
+}
+
+.create-new-input-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 48px;
+
+  height: 40%;
+}
+
+.create-new-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-new-title-input {
+  height: 24px;
+  font-size: 16px;
+}
+
+.priority-selector {
+  height: 30px;
+}
+
+.create-new-priority-picker {
+  display: flex;
+  flex-direction: column;
+
+  grid-column: 2;
+}
+
+.create-new-text-area-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
+.create-new-text-area {
+  height: 100%;
+}
+
+.create-new-btn-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 12px;
+  margin-right: 8px;
+}
+
+.create-new-submit-btn {
+  font-size: 24px;
+  background-color: #00ccff;
+  border-radius: 11px;
+}
+
+.create-new-submit-btn:hover,
+.create-new-submit-btn:active {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.198) 0 0);
+}
