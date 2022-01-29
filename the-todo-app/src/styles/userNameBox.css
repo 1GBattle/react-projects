@@ -1,0 +1,11 @@
+.user-name-title-container {
+  background-color: #04eb8b;
+  padding: 8px 8px;
+  margin-bottom: 12px;
+  border-radius: 11px;
+}
+
+.user-name-title {
+  font-size: 40px;
+  margin: 0;
+}

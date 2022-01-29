@@ -4,6 +4,7 @@ import '../styles/header.css'
 import { signIn, signUserOut, user } from '../firebase/firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { logIn, logOut } from '../redux/reducers/authSlice'
+import UserNameBox from './UserNameBox'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -11,14 +12,12 @@ const Header = () => {
 
   const signUserIn = () => {
     signIn()
-    dispatch(logIn({ ...user }))
-    console.log(userFromStore)
+    dispatch(logIn(user))
   }
 
   const signOutUser = () => {
     signUserOut()
     dispatch(logOut(null))
-    console.log(userFromStore)
   }
 
   const displayAuthButton = () => {
@@ -37,22 +36,38 @@ const Header = () => {
     }
   }
 
-  return (
-    <div className='header-container'>
-      <header className='header'>
-        <div>
-          <Link to='/' className='header-title-link'>
-            <h1 className='header-title'>The Todo App</h1>
-          </Link>
+  const displayUserNameBox = () => {
+    if (userFromStore) {
+      return (
+        <div className='user-name-container'>
+          <UserNameBox userName={userFromStore.displayName} />
         </div>
+      )
+    } else {
+      return null
+    }
+  }
 
-        <div>
-          <Link to='/create' className='header-title-link'>
-            Create New
-          </Link>
-          {displayAuthButton()}
-        </div>
-      </header>
+  return (
+    <div className='header-component container'>
+      <div className='header-container'>
+        <header className='header'>
+          <div>
+            <Link to='/' className='header-title-link'>
+              <h1 className='header-title'>The Todo App</h1>
+            </Link>
+          </div>
+
+          <div>
+            <Link to='/create' className='header-title-link'>
+              Create New
+            </Link>
+            {displayAuthButton()}
+          </div>
+        </header>
+      </div>
+
+      {displayUserNameBox()}
     </div>
   )
 }

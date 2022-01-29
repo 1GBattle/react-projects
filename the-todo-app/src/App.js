@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import CreateNewTodo from './Components/CreateNewTodo'
 import DashBoard from './Components/Dashboard'
 import EditTodo from './Components/EditTodo'
@@ -11,11 +11,11 @@ function App() {
       <BrowserRouter>
         <Header />
 
-        <Switch>
+        <Routes>
           <Route exact path='/' component={DashBoard} />
           <Route exact path='/create' component={CreateNewTodo} />
           <Route exact path='/edit/:id' component={EditTodo} />
-        </Switch>
+        </Routes>
       </BrowserRouter>
     </div>
   )

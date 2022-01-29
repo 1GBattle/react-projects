@@ -9,12 +9,10 @@ const authReducers = createSlice({
   reducers: {
     logIn: (state, action) => {
       state.value = action.payload
-      console.log(state.value)
     },
 
     logOut: (state, action) => {
       state.value = action.payload
-      console.log(state.value)
     }
   }
 })
