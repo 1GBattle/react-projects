@@ -58,11 +58,12 @@ const Header = () => {
             </Link>
           </div>
 
-          <div>
-            <Link to='/create' className='header-title-link'>
-              Create New
-            </Link>
+          <div className='header-btn-container'>
             {displayAuthButton()}
+
+            <Link to='/create' className='header-title-link'>
+              Create New Todo
+            </Link>
           </div>
         </header>
       </div>

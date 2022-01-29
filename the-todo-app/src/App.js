@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, Routes } from 'react-router-dom'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import CreateNewTodo from './Components/CreateNewTodo'
 import DashBoard from './Components/Dashboard'
 import EditTodo from './Components/EditTodo'
@@ -7,17 +7,15 @@ import Header from './Components/Header'
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Header />
+    <BrowserRouter>
+      <Header />
 
-        <Routes>
-          <Route exact path='/' component={DashBoard} />
-          <Route exact path='/create' component={CreateNewTodo} />
-          <Route exact path='/edit/:id' component={EditTodo} />
-        </Routes>
-      </Router>
-    </div>
+      <Switch>
+        <Route exact path='/' component={DashBoard} />
+        <Route exact path='/create' component={CreateNewTodo} />
+        <Route exact path='/edit/:id' component={EditTodo} />
+      </Switch>
+    </BrowserRouter>
   )
 }
 

@@ -20,15 +20,10 @@ let user = {}
 const signIn = () =>
   signInWithPopup(auth, googleProvider)
     .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result)
-      const token = credential.accessToken
       user = result.user
     })
     .catch((err) => {
-      const errCode = err.code
-      const errMessage = err.message
-      const errEmail = err.email
-      const credential = GoogleAuthProvider.credentialFromError(err)
+      console.log(err)
     })
 
 const signUserOut = () =>
