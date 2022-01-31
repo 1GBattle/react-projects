@@ -22,6 +22,7 @@ const CompletedTodoList = () => {
             priority={todo.priority}
             id={todo.id}
             todo={todo}
+            isCompleted={todo.isCompleted}
           />
         )
       })}

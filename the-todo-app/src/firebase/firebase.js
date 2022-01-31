@@ -1,5 +1,12 @@
 import { initializeApp } from 'firebase/app'
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
+import {
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signOut
+} from 'firebase/auth'
+import { get, getDatabase, onValue, ref, set } from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDZULdhoGotBd_fhiRDIPfsaCjwy178rNw',
@@ -14,8 +21,13 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
+const db = getDatabase(
+  app,
+  'https://the-todo-app-339018-default-rtdb.firebaseio.com/'
+)
 const googleProvider = new GoogleAuthProvider()
 let user = {}
+let todosFromDb = [{}]
 
 const signIn = () =>
   signInWithPopup(auth, googleProvider)
@@ -35,4 +47,16 @@ const signUserOut = () =>
       console.log('error occured while trying to sign you out')
     })
 
-export { signIn, signUserOut, user }
+const addTodos = (todos, userId) => {
+  set(ref(db, '/todos-' + userId), { ...todos })
+}
+
+const getTodos = (userId) => {
+  const userTodoRef = ref(db, '/todos-' + userId)
+  onValue(userTodoRef, (snapShot) => {
+    const data = snapShot.val()
+    todosFromDb = data
+  })
+}
+
+export { signIn, signUserOut, addTodos, getTodos, user, todosFromDb }

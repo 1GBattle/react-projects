@@ -8,7 +8,6 @@ const EditTodo = ({ match }) => {
   const [selectedTodo, setSelectedTodo] = useState({
     ...todos.find((todo) => todo.id === match.params.id)
   })
-  // const selectedTodo = { ...todos.find((todo) => todo.id === match.params.id) }
 
   const dispatch = useDispatch()
 
@@ -24,8 +23,9 @@ const EditTodo = ({ match }) => {
     setSelectedTodo({ ...selectedTodo, additionalInfo: e.target.value })
   }
 
-  console.log(selectedTodo)
-  console.log(match.params.id)
+  const onTodoCompletionChange = (e) => {
+    setSelectedTodo({ ...selectedTodo, isCompleted: e.target.checked })
+  }
 
   return (
     <div className='create-new-placeholder'>
@@ -57,6 +57,15 @@ const EditTodo = ({ match }) => {
           </div>
         </div>
 
+        <div className='create-new-checkbox-container' style={{ marginBottom: 32 }}>
+          <input
+            className='create-new-checkbox'
+            type='checkbox'
+            onChange={(e) => onTodoCompletionChange(e)}
+          />
+          <label className='create-new-checkbox-label'>Mark as completed</label>
+        </div>
+
         <div className='create-new-text-area-container'>
           <label className='create-new-text-area-label'>Additional Info</label>
           <textarea
@@ -72,7 +81,7 @@ const EditTodo = ({ match }) => {
               className='btn create-new-submit-btn'
               onClick={() => dispatch(editTodo(selectedTodo))}
             >
-              Submit
+              Save Changes
             </button>
           </Link>
         </div>

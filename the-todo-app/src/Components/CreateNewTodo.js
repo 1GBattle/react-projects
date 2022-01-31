@@ -2,16 +2,20 @@ import React, { useState } from 'react'
 import '../styles/createNewTodo.css'
 import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../redux/reducers/todoReducers'
+import { addTodos } from '../firebase/firebase'
 
 const CreateNewTodo = () => {
+  const user = useSelector((state) => state.user.value)
+  const todos = useSelector((state) => state.todos.value)
   const [newTodo, setNewTodo] = useState({
     title: '',
     priority: '',
     additionalInfo: '',
     isCompleted: false,
-    id: uuidv4()
+    id: uuidv4(),
+    userId: user.uid
   })
 
   const dispatch = useDispatch()
@@ -26,6 +30,15 @@ const CreateNewTodo = () => {
 
   const onAdditionalInfoChange = (e) => {
     setNewTodo({ ...newTodo, additionalInfo: e.target.value })
+  }
+
+  const addTodosToDatabase = () => {
+    if (user) {
+      dispatch(addTodo(newTodo))
+      addTodos(todos, user.uid)
+    } else {
+      dispatch(addTodo(newTodo))
+    }
   }
 
   return (
@@ -70,7 +83,7 @@ const CreateNewTodo = () => {
           <Link to='/'>
             <button
               className='btn create-new-submit-btn'
-              onClick={() => dispatch(addTodo(newTodo))}
+              onClick={() => addTodosToDatabase()}
             >
               Submit
             </button>

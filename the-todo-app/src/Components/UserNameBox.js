@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/userNameBox.css'
 
-const UserNameBox = ({ userName }) => {
+const UserNameBox = ({ userName, match }) => {
   return (
     <div className='user-name-title-container'>
       <h2 className='user-name-title'>Welcome, {userName}</h2>

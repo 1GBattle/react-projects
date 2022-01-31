@@ -12,7 +12,7 @@ const Header = () => {
 
   const signUserIn = () => {
     signIn()
-    dispatch(logIn(user))
+    dispatch(logIn({ ...user }))
   }
 
   const signOutUser = () => {
