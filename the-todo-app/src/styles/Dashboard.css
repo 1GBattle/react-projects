@@ -1,11 +1,13 @@
 .dashboard-container {
-  margin: auto;
-  margin-top: 54px;
+  margin: 54px auto auto;
 
   width: 1400px;
   height: 1000px;
 
   border: 1px solid #ccc;
+  border-radius: 9px;
+
+  box-shadow: 1px 24px 12px rgba(0,0,0, 0.5);
 }
 
 .dashboard-title {

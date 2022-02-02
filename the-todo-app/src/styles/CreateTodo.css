@@ -4,6 +4,7 @@
   align-items: center;
 
   margin: 24px;
+
 }
 
 .create-new-todo-input-container {
@@ -15,7 +16,7 @@
 
   border: 1px solid #ccc;
   width: 400px;
-  height: 100px;
+  height: 120px;
   padding: 16px;
 }
 

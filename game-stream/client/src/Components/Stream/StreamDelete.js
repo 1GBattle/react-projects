@@ -6,17 +6,17 @@ import history from "../../history";
 import Modal from "../Modal";
 
 const StreamDelete = ({ deleteStream, stream, getStream, ...props }) => {
-  const streamId = props.match.params.id;
+  const streamId = props.match.params.id
   useEffect(() => {
     getStream(streamId);
   }, [getStream, streamId]);
 
   const handleClick = () => {
-    deleteStream(props.match.params.id);
+    deleteStream(props.match.params.id)
   };
 
   const onDismiss = () => {
-    history.push("/");
+    history.push("/")
   };
 
   const actions = (
@@ -42,7 +42,7 @@ const StreamDelete = ({ deleteStream, stream, getStream, ...props }) => {
   };
 
   if (!stream) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   return (
