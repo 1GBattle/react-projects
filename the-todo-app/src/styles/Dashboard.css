@@ -1,0 +1,74 @@
+.dashboard-container {
+  margin: auto;
+  margin-top: 54px;
+
+  width: 1400px;
+  height: 1000px;
+
+  border: 1px solid #ccc;
+}
+
+.dashboard-title {
+  text-align: center;
+}
+
+.add-new-btn {
+  border: none;
+  font-size: 24px;
+}
+
+.search-todos-btn {
+  border: none;
+}
+
+.todo-functions-placeholder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.todo-functions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+
+  margin: 12px;
+  margin-right: 48px;
+  width: 50%;
+}
+
+.search-container {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-search-bar {
+  height: 24px;
+  width: 80%;
+}
+
+.lists-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-height: 680px;
+  padding-bottom: 32px;
+  margin-top: 40px;
+}
+
+.completed-todo-list,
+.active-todo-list {
+  border: 1px solid #ccc;
+  border-radius: 11px;
+  width: 40%;
+  max-height: 625px;
+
+  overflow-y: auto;
+}
+
+.create-todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+.todo-list-title {
+  margin: 0;
+  padding: 8px;
+
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+
+  background-color: #fbff00;
+
+  position: static;
+}
