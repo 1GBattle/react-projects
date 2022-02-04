@@ -1,0 +1,13 @@
+.home-container {
+  margin: auto;
+  width: 1200px;
+}
+
+.page-title {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.book-dashboard {
+  margin-top: 64px;
+}

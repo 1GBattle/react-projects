@@ -46,6 +46,7 @@ const CreateTodo = ({ setDisplayCreateTodo }) => {
             >
               X
             </h3>
+            
           </div>
 
           <input
@@ -55,6 +56,7 @@ const CreateTodo = ({ setDisplayCreateTodo }) => {
             onChange={(e) => onTodoTitleChange(e)}
             onKeyDown={(e) => _handleKeyDown(e)}
             required={true}
+            autoFocus={true}
           />
         </div>
 

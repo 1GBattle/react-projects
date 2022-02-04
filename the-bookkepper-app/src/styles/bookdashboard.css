@@ -1,0 +1,9 @@
+.book-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  height: 80vh;
+}

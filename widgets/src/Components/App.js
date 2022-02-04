@@ -1,13 +1,13 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense } from "react"
 
-import "../Styles/App.css";
+import "../Styles/App.css"
 
-import Accordion from "./Accordion";
-import NavBar from "./NavBar/NavBar";
-import Route from "./Route";
+import Accordion from "./Accordion"
+import NavBar from "./NavBar/NavBar"
+import Route from "./Route"
 
-const WikiSearch = React.lazy(() => import("./WikiSearch/WikiSearch"));
-const Translate = React.lazy(() => import("./Translate/Translate"));
+const WikiSearch = React.lazy(() => import("./WikiSearch/WikiSearch"))
+const Translate = React.lazy(() => import("./Translate/Translate"))
 
 const accordionItems = [
   {
@@ -22,7 +22,7 @@ const accordionItems = [
     title: "How do you use react",
     content: "you use react by creating Components",
   },
-];
+]
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
         <WikiSearch />
       </Route>
     </Suspense>
-  );
-};
+  )
+}
 
-export default App;
+export default App
