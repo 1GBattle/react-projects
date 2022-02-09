@@ -19,6 +19,7 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
+  padding: 16px;
 }
 
 .book-content-container {
@@ -33,7 +34,7 @@
 }
 
 .book-progress-bar {
-  background-color: #ccc;
+  background-color: #bbb;
   border-radius: 13px; /* (height of inner div) / 2 + padding */
   border: 1px solid #ccc;
   overflow: hidden;
@@ -68,11 +69,8 @@
   background-color: #0d71bb;
 }
 
-.edit-book-btn {
-  width: 62.5%;
-}
-
 .delete-btn {
   font-size: 12px;
   background-color: red;
+  width: 62.5%;
 }
