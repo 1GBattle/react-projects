@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css'
+import Home from './Components/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Nav from './Components/Nav'
+import BookList from './Components/BookList'
+import WishList from './Components/WishList'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const books = useSelector((state) => state.books.value)
+  const completedBooks = books.filter(
+    (book) => book.completedPages === book.pages
+  )
+  const activeBooks = books.filter((book) => book.completedPages !== book.pages)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route
+          exact
+          path="/books/inprogress"
+          element={
+            <BookList listTitle="Books in progress" books={activeBooks} />
+          }
+        />
+        <Route
+          exact
+          path="/books/completed"
+          element={
+            <BookList listTitle="Completed Books" books={completedBooks} />
+          }
+        />
+        <Route exact path="/books/wishlist" element={<WishList />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

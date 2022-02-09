@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+}
+
+.book-list-container {
+  margin-top: 32px;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 8px;
+  margin-top: 48px;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.book-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 62.5%;
+}
+
+.book-img {
+  width: 250px;
+}
+
+.book-progress-bar {
+  background-color: #ccc;
+  border-radius: 13px; /* (height of inner div) / 2 + padding */
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 100%;
+}
+
+.book-progress-bar > div {
+  background-color: #0d71bb;
+
+  height: 20px;
+  border-radius: 10px;
+}
+
+.book-progress {
+  color: white;
+  padding-left: 8px;
+}
+
+.book-functions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  width: 62.5%;
+  margin-top: 16px;
+}
+
+.add-completed-pages-btn,
+.edit-book-btn {
+  font-size: 12px;
+  background-color: #0d71bb;
+}
+
+.edit-book-btn {
+  width: 62.5%;
+}
+
+.delete-btn {
+  font-size: 12px;
+  background-color: red;
+}
