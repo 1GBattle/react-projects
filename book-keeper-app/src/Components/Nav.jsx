@@ -14,7 +14,6 @@ const Nav = () => {
   const [isModalTwoOpen, setIsModalTwoOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const dispatch = useDispatch()
-  const books = useSelector((state) => state.books.value.books)
   const perspectiveBooks = useSelector(
     (state) => state.books.value.perspectiveBooks
   )
@@ -29,7 +28,6 @@ const Nav = () => {
     setSearchTerm('')
     setIsModalTwoOpen(true)
     setIsModalOpen(false)
-    console.log(books)
   }
 
   const displayModal = () => {
@@ -68,7 +66,6 @@ const Nav = () => {
           <h1 className="modal-title">Select Book</h1>
           <div className="books-select-container">
             {perspectiveBooks.map((book) => {
-              console.log(book.pageCount)
               return (
                 <div className="book-select-container" key={book.id}>
                   {book.img ? (
@@ -87,11 +84,11 @@ const Nav = () => {
 
                   <div className="book-select-content">
                     <h3 className="book-select-title">{book.title}</h3>
-                    <p>
-                      {book.author.length > 1
-                        ? book.author.join(', ')
-                        : book.author}
-                    </p>
+                    {book.author && book.author.length > 1 ? (
+                      <p className="book-author">{book.author.join(', ')}</p>
+                    ) : (
+                      <p className="book-author">{book.author}</p>
+                    )}
                     <p className="book-select-pagecount">
                       {book.pageCount} Pages
                     </p>

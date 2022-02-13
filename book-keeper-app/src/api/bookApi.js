@@ -1,5 +1,5 @@
 import axios from 'axios'
-import defaultBookCover from '../assets/default_book_cover_2015.jpeg'
+import { v4 as uuidv4 } from 'uuid'
 
 const getBook = async (searchString) => {
   const response = await axios.get(
@@ -20,7 +20,7 @@ const mainFetchFunction = async (searchString) => {
         title: item.volumeInfo.title,
         pageCount: item.volumeInfo.pageCount,
         img: item.volumeInfo.imageLinks,
-        id: item.accessInfo.id,
+        id: uuidv4(),
         completedPages: 0,
       }
 
@@ -31,7 +31,7 @@ const mainFetchFunction = async (searchString) => {
         title: item.volumeInfo.title,
         pageCount: item.volumeInfo.pageCount,
         img: '#',
-        id: item.accessInfo.id,
+        id: uuidv4(),
         completedPages: 0,
       }
 

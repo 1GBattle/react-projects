@@ -7,39 +7,6 @@ const BookSlice = createSlice({
       books: [],
       perspectiveBooks: [],
     },
-    //   {
-    //     bookName: 'book1',
-    //     author: 'author1',
-    //     genre: 'dystopian',
-    //     completedPages: 10,
-    //     pages: 100,
-    //     id: 1,
-    //   },
-    //   {
-    //     bookName: 'Book2',
-    //     author: 'author1',
-    //     genre: 'dystopian',
-    //     completedPages: 25,
-    //     pages: 352,
-    //     id: 2,
-    //   },
-    //   {
-    //     bookName: 'Book3',
-    //     author: 'author1',
-    //     genre: 'dystopian',
-    //     completedPages: 156,
-    //     pages: 500,
-    //     id: 3,
-    //   },
-    //   {
-    //     bookName: 'Book3',
-    //     author: 'author1',
-    //     genre: 'dystopian',
-    //     completedPages: 156,
-    //     pages: 500,
-    //     id: 4,
-    //   },
-    // ],
   },
 
   reducers: {
@@ -49,8 +16,13 @@ const BookSlice = createSlice({
     addPerspectiveBooks: (state, action) => {
       state.value.perspectiveBooks = action.payload
     },
+    editBook: (state, action) => {
+      state.value.books = state.value.books.map((book) =>
+        book.id === action.payload.id ? action.payload : book
+      )
+    },
     removeBook: (state, action) => {
-      state.value = state.value
+      state.value.books = state.value.books
         .map((book) => book)
         .filter((book) => book.id !== action.payload)
     },
@@ -59,4 +31,5 @@ const BookSlice = createSlice({
 
 export default BookSlice.reducer
 
-export const { addBook, removeBook, addPerspectiveBooks } = BookSlice.actions
+export const { addBook, removeBook, addPerspectiveBooks, editBook } =
+  BookSlice.actions
