@@ -37,9 +37,79 @@
 .add-book-btn {
   background: none;
   padding: 1px !important;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bolder;
 
   border: none;
   color: white;
   cursor: pointer;
+}
+/* ---  MODAL STYLES  ---l*/
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin: 24px 0;
+}
+
+.modal-input-label {
+  font-weight: bold;
+}
+
+.modal-input {
+  height: 24px;
+  font-size: 16px;
+}
+
+.modal-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-btn {
+  background-color: #0d71bb;
+}
+
+.books-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-top: 24px;
+}
+
+.book-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.book-select-container:last-child {
+  border-bottom: none;
+}
+
+.book-select-title {
+  margin-bottom: 8px;
+}
+
+.create-book-btn {
+  background-color: #0d71bb;
+  width: 56px;
+}
+
+.book-select-img,
+.not-aval-img {
+  width: 96px !important;
+  height: 96px;
 }

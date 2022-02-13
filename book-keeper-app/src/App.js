@@ -7,11 +7,12 @@ import WishList from './Components/WishList'
 import { useSelector } from 'react-redux'
 
 function App() {
-  const books = useSelector((state) => state.books.value)
-  const completedBooks = books.filter(
-    (book) => book.completedPages === book.pages
-  )
-  const activeBooks = books.filter((book) => book.completedPages !== book.pages)
+  const books = useSelector((state) => state.books.value.books)
+
+  // const completedBooks = books.filter(
+  //   (book) => book.completedPages === book.pages
+  // )
+  // const activeBooks = books.filter((book) => book.completedPages !== book.pages)
 
   return (
     <BrowserRouter>
@@ -21,16 +22,12 @@ function App() {
         <Route
           exact
           path="/books/inprogress"
-          element={
-            <BookList listTitle="Books in progress" books={activeBooks} />
-          }
+          element={<BookList listTitle="Books in progress" books={books} />}
         />
         <Route
           exact
           path="/books/completed"
-          element={
-            <BookList listTitle="Completed Books" books={completedBooks} />
-          }
+          element={<BookList listTitle="Completed Books" books={books} />}
         />
         <Route exact path="/books/wishlist" element={<WishList />} />
       </Routes>

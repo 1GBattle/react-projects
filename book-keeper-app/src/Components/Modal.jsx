@@ -1,12 +1,15 @@
 import React from 'react'
-import { createPortal } from 'react-dom'
+import ReactDOM from 'react-dom'
 
-const Modal = () => {
-  return (
-    <div className="modal-container">
-      <h1>Modal</h1>
-    </div>
+import '../styles/modal.css'
+
+const Modal = ({ children }) => {
+  return ReactDOM.createPortal(
+    <div className="modal-backdrop">
+      <div className="modal-container">{children}</div>
+    </div>,
+    document.getElementById('modal')
   )
 }
 
-export default createPortal(Modal, document.getElementById('modal'))
+export default Modal
