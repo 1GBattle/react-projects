@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import backIcon from '../assets/back-icon.png'
 
 import defaultBookCover from '../assets/default_book_cover_2015.jpeg'
 import Modal from './Modal'
@@ -30,11 +31,21 @@ const Nav = () => {
     setIsModalOpen(false)
   }
 
+  const swapModals = () => {
+    setIsModalTwoOpen(false)
+    setIsModalOpen(true)
+  }
+
   const displayModal = () => {
     //conditional renders each modal based on Open state
     if (isModalOpen === true) {
       return (
-        <Modal isModalOpen={isModalOpen} isModalTwoOpen={isModalTwoOpen}>
+        <Modal
+          isModalOpen={isModalOpen}
+          isModalTwoOpen={isModalTwoOpen}
+          setIsModalOpen={setIsModalOpen}
+          setIsModalTwoOpen={setIsModalTwoOpen}
+        >
           <h1 className="modal-title">Search for book</h1>
 
           <div className="modal-input-container">
@@ -45,6 +56,10 @@ const Nav = () => {
               className="modal-input"
               required={true}
               placeholder="Enter a search"
+              autoFocus
+              onKeyUp={(e) =>
+                e.key === 'Enter' ? onSearchSubmit(searchTerm) : null
+              }
             />
           </div>
 
@@ -62,8 +77,16 @@ const Nav = () => {
 
     if (isModalTwoOpen === true) {
       return (
-        <Modal>
-          <h1 className="modal-title">Select Book</h1>
+        <Modal setIsModalOpen={setIsModalTwoOpen}>
+          <div className="modal-header-container">
+            <img
+              className="back-icon"
+              src={backIcon}
+              alt="back icon"
+              onClick={() => swapModals()}
+            />
+            <h1 className="modal-title">Select A Book</h1>
+          </div>
           <div className="books-select-container">
             {perspectiveBooks.map((book) => {
               return (

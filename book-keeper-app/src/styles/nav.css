@@ -113,3 +113,18 @@
   width: 96px !important;
   height: 96px;
 }
+
+.modal-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: white;
+  left: -25%;
+  cursor: pointer;
+}

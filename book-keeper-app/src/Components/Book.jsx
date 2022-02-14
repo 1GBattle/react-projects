@@ -11,6 +11,7 @@ const Book = ({ book, progressBarRatio }) => {
 
   const addCompletedPages = () => {
     dispatch(editBook({ ...book, completedPages: pagesCompleted }))
+    setPagesCompleted(0)
     setIsModalOpen(false)
   }
 
