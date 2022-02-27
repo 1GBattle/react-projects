@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css'
 import DashBoard from './Components/Dashboard'
@@ -7,13 +7,15 @@ import Header from './Components/Header'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
+    <div className="app-container">
+      <BrowserRouter>
+        <Header />
 
-      <Switch>
-        <Route path='/' component={DashBoard} />
-      </Switch>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DashBoard />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 

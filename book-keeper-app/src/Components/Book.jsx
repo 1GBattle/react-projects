@@ -78,9 +78,11 @@ const Book = ({ book, progressBarRatio }) => {
 
       <div className="book-content-container">
         <div className="book-progress-bar">
-          <div style={{ width: `${progressBarRatio}%` }}>
-            <p className="book-progress">{progressBarRatio}%</p>
-          </div>
+          {progressBarRatio === null || progressBarRatio === 100 ? null : (
+            <div style={{ width: `${progressBarRatio}%` }}>
+              <p className="book-progress">{progressBarRatio}%</p>
+            </div>
+          )}
         </div>
 
         <h3 className="book-title">{book.title}</h3>
@@ -92,14 +94,15 @@ const Book = ({ book, progressBarRatio }) => {
         <p className="book-pages">Book Length: {book.pageCount} Pages</p>
       </div>
 
-      <div className="book-functions-container">
+      {progressBarRatio === 100 || progressBarRatio === null ? null : (
         <button
           className="btn add-completed-pages-btn"
           onClick={() => showModal()}
         >
           Compete Pages
         </button>
-      </div>
+      )}
+
       <button
         className="btn delete-btn"
         onClick={() => dispatch(removeBook(book.id))}

@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
-import TodoList from "./TodoList";
+import TodoList from './TodoList'
 
-import "../styles/Dashboard.css";
-import CreateTodo from "./CreateTodo";
+import '../styles/Dashboard.css'
+import CreateTodo from './CreateTodo'
 
 const DashBoard = () => {
-  const [displayCreateTodo, setDisplayCreateTodo] = useState(false);
+  const [displayCreateTodo, setDisplayCreateTodo] = useState(false)
 
   const completedTodos = useSelector((state) => state.todos.value)
     .map((todo) => todo)
-    .filter((todo) => todo.isCompleted === true);
+    .filter((todo) => todo.isCompleted === true)
 
   const activeTodos = useSelector((state) => state.todos.value)
     .map((todo) => todo)
-    .filter((todo) => todo.isCompleted === false);
+    .filter((todo) => todo.isCompleted === false)
 
   const displayCreateButton = () => {
     if (displayCreateTodo) {
-      return "display-none";
+      return 'display-none'
     }
-  };
+  }
 
   return (
-    <div className="dashboard-container box-shadow">
+    <div className="dashboard-container">
       <h1 className="dashboard-title">Things To Get Done</h1>
       <div className="todo-functions-placeholder">
         <div className="todo-functions-container">
           <button
-            className={"btn add-new-btn " + displayCreateButton()}
+            className={'btn add-new-btn ' + displayCreateButton()}
             onClick={() => setDisplayCreateTodo(true)}
           >
             Create
@@ -52,7 +52,7 @@ const DashBoard = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DashBoard;
+export default DashBoard

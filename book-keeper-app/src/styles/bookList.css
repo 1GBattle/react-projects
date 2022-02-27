@@ -66,14 +66,13 @@
   align-items: center;
   gap: 8px;
 
-  width: 62.5%;
   margin-top: 16px;
 }
 
-.add-completed-pages-btn,
-.edit-book-btn {
+.add-completed-pages-btn {
   font-size: 12px;
-  width: 100%;
+  width: 62.5%;
+
   background-color: #0d71bb;
 }
 

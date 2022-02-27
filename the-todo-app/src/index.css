@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family:  'Rubik', sans-serif, "Comic Sans MS";
+  /* min-width: fit-content; */
+
+  font-family: 'Rubik', sans-serif, 'Comic Sans MS';
 }
 
 .box-shadow {
@@ -15,6 +17,6 @@ body {
   background-color: #fbff00;
 }
 
-.display-none{
+.display-none {
   display: none;
 }
