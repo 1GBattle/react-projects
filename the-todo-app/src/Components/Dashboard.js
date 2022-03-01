@@ -26,10 +26,11 @@ const DashBoard = () => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Things To Get Done</h1>
+
       <div className="todo-functions-placeholder">
-        <div className="todo-functions-container">
+        <div className="create-todo-btn-container">
           <button
-            className={'btn add-new-btn ' + displayCreateButton()}
+            className={'btn add-new-btn box-shadow ' + displayCreateButton()}
             onClick={() => setDisplayCreateTodo(true)}
           >
             Create
@@ -37,9 +38,12 @@ const DashBoard = () => {
         </div>
       </div>
 
-      {displayCreateTodo ? (
+      {displayCreateButton ? (
         <div className="create-todo-container">
-          <CreateTodo setDisplayCreateTodo={setDisplayCreateTodo} />
+          <CreateTodo
+            setDisplayCreateTodo={setDisplayCreateTodo}
+            displayCreateTodo={displayCreateTodo}
+          />
         </div>
       ) : null}
 

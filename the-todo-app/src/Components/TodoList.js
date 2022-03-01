@@ -7,7 +7,9 @@ import '../styles/TodoList.css'
 const TodoList = ({ listTitle, todos }) => {
   return (
     <div>
-      <h1 className="todo-list-title">{listTitle}</h1>
+      <div className="todo-list-title-container">
+        <h1 className="todo-list-title">{listTitle}</h1>
+      </div>
 
       <div className="todo-list-container">
         {todos.map((todo) => {
