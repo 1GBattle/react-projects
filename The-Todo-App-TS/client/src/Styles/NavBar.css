@@ -1,0 +1,19 @@
+.nav-container{
+    height: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: .25px solid black;
+    margin-bottom: 1.5rem;
+}
+
+.page-title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px;
+}
+
+.add-todo-btn{
+    font-size: 2rem;
+}

@@ -76,7 +76,7 @@
   align-items: center;
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
   .lists-container {
     flex-direction: column;
     justify-content: space-between;
@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .lists-container {
   }
 

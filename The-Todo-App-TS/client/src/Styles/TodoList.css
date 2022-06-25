@@ -1,0 +1,32 @@
+.lists-container{
+    margin-top: 2rem;
+}
+
+.todo-list{
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 72.5vh;
+    padding: .25rem;
+    margin-top: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title-container{
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   margin-left: 6rem;
+   gap: 1rem; 
+}
+
+.remaining-todos{
+    text-align: center;
+    border-bottom: .5px solid #ccc;
+    margin-right: 3rem;
+}
+

@@ -1,0 +1,26 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-label{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: .25rem;
+}
+
+.search-input{
+    height: 2rem;
+    width: 40rem;
+    font-size: 1.25rem;
+    padding: .25rem;
+}
+
+.search-btn{
+    font-size: 2.1rem;
+    margin-left: 1rem;
+    position: absolute;
+    top: 10%;
+}
