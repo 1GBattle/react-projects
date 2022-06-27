@@ -12,28 +12,70 @@ code {
     monospace;
 }
 
-.container{
+.container {
   width: 100rem;
   margin: 0 auto;
 }
 
-.box-shadow{
-  box-shadow: 6px -6px 3px rgba(0, 0, 0, .2);
+.box-shadow {
+  box-shadow: 6px -6px 3px rgba(0, 0, 0, 0.2);
 }
 
-.gradient{
+.gradient {
   background-image: linear-gradient(90deg, #fbec5a, #f6c2ef);
 }
 
-.btn{
+.btn {
   border: none;
   border-radius: 9px;
 }
 
-.outline-urgent{
-  border: 1px solid #FF0000FF;
+.outline-urgent {
+  border: 1px solid #ff0000ff;
 }
 
-.outline-norm{
+.outline-norm {
   border: 1px solid #000;
+}
+
+@media (max-width: 1600px) {
+  .container {
+    width: 87.5rem;
+  }
+}
+
+@media (max-width: 1401px) {
+  .container {
+    width: 75rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 62.5rem;
+  }
+}
+
+@media (max-width: 1001px) {
+  .container {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 801px) {
+  .container {
+    width: 37.5rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .container {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 401px) {
+  .container {
+    width: 12.5rem;
+  }
 }

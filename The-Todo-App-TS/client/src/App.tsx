@@ -48,9 +48,11 @@ function App() {
       ) : null}
 
       {searchQuery ? null : (
-        <div className="container todo-lists-container">
-          <TodoList listTitle={'remaining'} todos={incompleteTodos} />
-          <TodoList listTitle={'completed'} todos={completedTodos} />
+        <div className="container todo-list-holder">
+          <div className="todo-lists-container">
+            <TodoList listTitle={'remaining'} todos={incompleteTodos} />
+            <TodoList listTitle={'completed'} todos={completedTodos} />
+          </div>
         </div>
       )}
     </div>
