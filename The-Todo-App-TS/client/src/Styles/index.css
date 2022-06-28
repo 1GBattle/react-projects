@@ -40,7 +40,7 @@ code {
 }
 
 .outline-can-wait {
-  border: 1px solid #ff9d00;
+  border: 1px solid #fff200;
 }
 
 @media (max-width: 1600px) {
@@ -84,9 +84,3 @@ code {
     width: 16.5rem;
   }
 }
-
-/* @media (max-width: 401px) {
-  .container {
-    width: 12.5rem;
-  }
-} */
