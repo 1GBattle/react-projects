@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -30,12 +31,16 @@ code {
   border-radius: 9px;
 }
 
+.outline-norm {
+  border: 1px solid #000;
+}
+
 .outline-urgent {
   border: 1px solid #ff0000ff;
 }
 
-.outline-norm {
-  border: 1px solid #000;
+.outline-can-wait {
+  border: 1px solid #ff9d00;
 }
 
 @media (max-width: 1600px) {
@@ -74,8 +79,14 @@ code {
   }
 }
 
-@media (max-width: 401px) {
+@media (max-width: 481px) {
+  .container {
+    width: 16.5rem;
+  }
+}
+
+/* @media (max-width: 401px) {
   .container {
     width: 12.5rem;
   }
-}
+} */

@@ -35,3 +35,13 @@
     width: 20rem;
   }
 }
+
+@media (max-width: 481px) {
+  .search-input {
+    width: 15rem;
+  }
+
+  .search-btn {
+    display: none;
+  }
+}

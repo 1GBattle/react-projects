@@ -4,6 +4,8 @@
   margin-top: 2rem;
   box-sizing: border-box;
   margin-right: 0;
+  gap: 2rem;
+  padding: 0.25rem;
 }
 
 .todo-lists-holder {
@@ -12,4 +14,18 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+
+@media (max-width: 801px) {
+  .todo-lists-container {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 481px) {
+  .todo-lists-container {
+    gap: 1rem;
+  }
 }

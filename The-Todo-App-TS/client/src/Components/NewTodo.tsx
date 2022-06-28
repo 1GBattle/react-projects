@@ -34,6 +34,7 @@ const NewTodo: React.FunctionComponent<NewTodoProps> = ({
           <label className="input-label">Title</label>
           <input
             required={true}
+            autoFocus={true}
             className="title-input"
             value={title}
             onChange={(e) => setTitle(e.target.value)}

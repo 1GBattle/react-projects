@@ -21,20 +21,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 6rem;
   gap: 1rem;
 }
 
 .remaining-todos {
   text-align: center;
   border-bottom: 0.5px solid #ccc;
-  margin-right: 3rem;
-}
-
-@media (max-width: 1401px) {
-  .lists-container {
-    /* width: 87.5rem !important; */
-  }
 }
 
 @media (max-width: 1000px) {
@@ -44,5 +36,31 @@
 
   .todo-list {
     max-height: 50vh;
+  }
+}
+
+@media (max-width: 801px) {
+  .todo-list {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 601px) {
+  .lists-container {
+    width: 100%;
+  }
+
+  .remaining-todos {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-list {
+    gap: 1rem;
+  }
+
+  .remaining-todos {
+    font-size: 1.5rem;
   }
 }

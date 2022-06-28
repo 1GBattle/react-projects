@@ -1,43 +1,74 @@
-.new-todo-container{
-    margin-bottom: 2rem;
+.new-todo-container {
+  margin-bottom: 2rem;
 }
 
-.input-containers{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    margin-bottom: 2rem;
-    gap: 1.5rem;
+.input-containers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
 }
 
-.input-container{
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.title-input {
+  height: 2rem;
+  font-size: 1.3rem;
+}
+
+.todo-description-input {
+  grid-column: 1 / span;
+}
+
+.select {
+  height: 2.3rem;
+  font-size: 1.5rem;
+}
+
+.confirm-btn {
+  justify-self: center;
+  align-self: center;
+  width: 25%;
+  height: 2rem;
+}
+
+@media (max-width: 601px) {
+  .input-containers {
+    justify-content: space-between;
+  }
+
+  .title-input {
+    height: 1.5rem;
+  }
+
+  .input-containers {
     display: flex;
     flex-direction: column;
-}
+  }
 
-.input-label{
-    margin-bottom: .25rem;
-    font-weight: bold;
-    text-align: center;
-}
+  .title-input {
+    max-width: 100%;
+  }
 
-.title-input{
-    height: 2rem;
-    font-size: 1.3rem;
-}
+  .confirm-btn {
+    width: 80%;
+  }
 
-.todo-description-input{
-    grid-column: 1 / span ;
-}
-
-.select{
-    height: 2.3rem;
+  .select {
+    height: 1.8rem;
     font-size: 1.5rem;
+  }
 }
 
-.confirm-btn{
-    justify-self: center;
-    align-self: center;
-    width: 25%;
-    height: 2rem;
+@media (max-width: 481px) {
 }

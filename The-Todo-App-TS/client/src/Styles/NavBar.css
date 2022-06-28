@@ -3,7 +3,7 @@
   width: 100%;
   box-sizing: border-box;
   border-bottom: 0.25px solid black;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -16,4 +16,16 @@
 
 .add-todo-btn {
   font-size: 2rem;
+}
+
+@media (max-width: 481px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-title {
+    font-size: 2rem;
+  }
 }

@@ -13,6 +13,10 @@ const outlineColor = (urgency: string | undefined) => {
   if (urgency === 'urgent') {
     return 'outline-urgent'
   }
+
+  if (urgency === 'can wait') {
+    return 'outline-can-wait'
+  }
 }
 
 const TodoCard: React.FunctionComponent<TodoCardProps> = ({
@@ -99,7 +103,7 @@ const TodoCard: React.FunctionComponent<TodoCardProps> = ({
               console.log(isComplete)
             }}
           >
-            Mark incomplete
+            Incomplete
           </button>
         ) : (
           <button
@@ -108,7 +112,7 @@ const TodoCard: React.FunctionComponent<TodoCardProps> = ({
               changeIsComplete().then()
             }}
           >
-            Mark complete
+            Complete
           </button>
         )}
       </div>
