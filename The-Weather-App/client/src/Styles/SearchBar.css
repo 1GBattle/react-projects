@@ -1,0 +1,17 @@
+.search-bar,
+.search-bar:focus {
+  width: 60%;
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+
+  border-radius: 12px;
+  border: none;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}

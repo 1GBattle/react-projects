@@ -1,0 +1,21 @@
+.weather-display-heading-container {
+  display: flex;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.display-date-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.display-date {
+  font-size: 2.5rem;
+}
+
+.display-city {
+  font-size: 1.5rem;
+}
