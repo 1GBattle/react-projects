@@ -1,7 +1,7 @@
 .weather-display-heading-container {
   display: flex;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 10rem;
 }
 
 .display-date-container {

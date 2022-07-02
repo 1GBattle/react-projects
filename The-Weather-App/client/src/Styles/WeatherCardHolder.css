@@ -1,0 +1,7 @@
+.weather-card-holder-container {
+  height: 45vh;
+  border-radius: 9px;
+  margin-top: 12rem;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.55);
+  background-color: #fff;
+}
