@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { getForecast } from './api/forecast'
 import NavBar from './Components/NavBar'
 import SearchBar from './Components/SearchBar'
 import WeatherCardHolder from './Components/WeatherCardHolder'
 import WeatherDisplayHeading from './Components/WeatherDisplayHeading'
-// import { WeatherService } from 'm3o/weather'
-import { APIKey } from './APIKEY'
-import axios from 'axios'
+import { useAppDispatch } from './Hooks/CustomHooks'
+import { setForecast } from './Store/reducers/ForecastSlice'
 
 const App = () => {
-  const [forecast, setForecast] = useState()
+  const [searchCity, setSearchCity] = React.useState('london')
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    const weatherService = async () => {
-      const res = await axios.post(
-        'https://api.m3o.com/v1/weather/Forecast',
-        { days: 5, city: 'London' },
-        {
-          headers: {
-            Authorization: `Bearer ${APIKey}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-
-      setForecast(res.data)
-    }
-
-    weatherService().catch((err) => console.log(err))
-  }, [])
+    getForecast(5, searchCity).then((forecast) => {
+      dispatch(setForecast(forecast))
+    })
+  }, [searchCity, dispatch])
 
   return (
     <div>
@@ -36,7 +24,7 @@ const App = () => {
       </div>
 
       <div className="content-container">
-        <SearchBar />
+        <SearchBar setSearchCity={setSearchCity} />
         <WeatherDisplayHeading />
         <WeatherCardHolder />
       </div>

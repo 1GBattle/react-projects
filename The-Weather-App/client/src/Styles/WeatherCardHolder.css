@@ -1,7 +1,28 @@
 .weather-card-holder-container {
   height: 45vh;
-  border-radius: 9px;
+  border-radius: 15px;
   margin-top: 12rem;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.55);
   background-color: #fff;
+}
+
+.weather-card-holder {
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-card-holder-title {
+  color: #000;
+  font-size: 1.75rem;
+}
+
+.weather-card-holder-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
 }
