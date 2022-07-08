@@ -4,15 +4,12 @@ import ForecastModel from '../../Models/ForecastModel'
 const ForecastSlice = createSlice({
   name: 'forecast',
   initialState: {
-    value: [],
+    value: [] as ForecastModel[],
   },
 
   reducers: {
     setForecast: (state: any, action: PayloadAction<ForecastModel>) => {
       state.value = action.payload
-    },
-    getForecast: (state: any) => {
-      return state.value
     },
   },
 })

@@ -1,22 +1,25 @@
 import React from 'react'
+
+import { useAppSelector } from '../Hooks/CustomHooks'
 import WeatherCard from './WeatherCard'
+import ForecastModel from '../Models/ForecastModel'
 
 import '../Styles/WeatherCardHolder.css'
-import { useAppSelector } from '../Hooks/CustomHooks'
 
 const WeatherCardHolder = () => {
-  const forecasts = useAppSelector((state) => state.forecast.value)
+  let forecasts = useAppSelector((state) => state.forecast.value)
+  const forecastsToMap = forecasts.slice(1)
 
   return (
     <div className="weather-card-holder-container">
       <div className="weather-card-holder">
         <div className="weather-card-holder-title">
-          <h1>Next five days...</h1>
+          <h1>Your forecast for the rest of the week</h1>
         </div>
 
         <div className="weather-card-holder-cards">
-          {forecasts.map((forecast) => {
-            return <WeatherCard forecast={forecast} />
+          {forecastsToMap.map((forecast: ForecastModel) => {
+            return <WeatherCard key={Math.random()} forecast={forecast} />
           })}
         </div>
       </div>

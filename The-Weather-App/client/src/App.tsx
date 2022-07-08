@@ -12,7 +12,7 @@ const App = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    getForecast(5, searchCity).then((forecast) => {
+    getForecast(6, searchCity).then((forecast) => {
       dispatch(setForecast(forecast))
     })
   }, [searchCity, dispatch])
