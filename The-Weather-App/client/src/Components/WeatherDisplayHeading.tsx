@@ -19,7 +19,7 @@ const WeatherDisplayHeading: React.FunctionComponent<
       <div className="display-date-container">
         <h1 className="display-date">{moment().format('ddd MM')}</h1>
         <p className="display-city">
-          Weekly forcast for {searchCity.toUpperCase()}
+          Today's weather for {searchCity.toUpperCase()}
         </p>
       </div>
 
@@ -30,8 +30,6 @@ const WeatherDisplayHeading: React.FunctionComponent<
             src={forecastToday.iconUrl}
             alt="weather icon"
           />
-
-          <p className="display-condition">{forecastToday.condition}</p>
         </div>
       )}
 

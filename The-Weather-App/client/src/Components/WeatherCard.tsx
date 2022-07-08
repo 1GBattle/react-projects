@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Styles/WeatherCard.css'
 
 import ForecastModel from '../Models/ForecastModel'

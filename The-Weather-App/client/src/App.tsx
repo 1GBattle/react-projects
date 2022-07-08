@@ -12,6 +12,7 @@ const App = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
+    dispatch(setForecast([]))
     getForecast(7, searchCity).then((forecast) => {
       dispatch(setForecast(forecast))
     })
