@@ -8,11 +8,11 @@ import { useAppDispatch } from './Hooks/CustomHooks'
 import { setForecast } from './Store/reducers/ForecastSlice'
 
 const App = () => {
-  const [searchCity, setSearchCity] = React.useState('london')
+  const [searchCity, setSearchCity] = React.useState('houston')
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    getForecast(6, searchCity).then((forecast) => {
+    getForecast(7, searchCity).then((forecast) => {
       dispatch(setForecast(forecast))
     })
   }, [searchCity, dispatch])
@@ -25,7 +25,7 @@ const App = () => {
 
       <div className="content-container">
         <SearchBar setSearchCity={setSearchCity} />
-        <WeatherDisplayHeading />
+        <WeatherDisplayHeading searchCity={searchCity} />
         <WeatherCardHolder />
       </div>
     </div>

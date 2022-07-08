@@ -17,7 +17,7 @@ export const getForecast = async (days: number, location: string) => {
     return data.forecast.map((forecast: any) => {
       return {
         localTime: new Date().toISOString(),
-        date: new Date().toISOString(),
+        date: forecast.date,
         maxTempCelsius: forecast.max_temp_c,
         minTempCelsius: forecast.min_temp_c,
         maxTempFahrenheit: forecast.max_temp_f,

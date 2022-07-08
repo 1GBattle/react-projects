@@ -10,6 +10,7 @@ const ForecastSlice = createSlice({
   reducers: {
     setForecast: (state: any, action: PayloadAction<ForecastModel>) => {
       state.value = action.payload
+      console.log(state.value)
     },
   },
 })

@@ -5,14 +5,22 @@ import { useAppSelector } from '../Hooks/CustomHooks'
 
 import '../Styles/WeatherDisplayHeading.css'
 
-const WeatherDisplayHeading = () => {
+interface WeatherDisplayHeadingProps {
+  searchCity: string
+}
+
+const WeatherDisplayHeading: React.FunctionComponent<
+  WeatherDisplayHeadingProps
+> = ({ searchCity }) => {
   const forecastToday = useAppSelector((state) => state.forecast.value[0])
 
   return (
     <div className="weather-display-heading-container">
       <div className="display-date-container">
         <h1 className="display-date">{moment().format('ddd MM')}</h1>
-        <p className="display-city">Weekly forcast for </p>
+        <p className="display-city">
+          Weekly forcast for {searchCity.toUpperCase()}
+        </p>
       </div>
 
       {forecastToday && (
