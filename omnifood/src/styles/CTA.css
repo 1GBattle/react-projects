@@ -1,0 +1,90 @@
+.section-cta {
+  padding: 3.2rem 0 9.6rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.44);
+  border-radius: 11px;
+
+  background-image: linear-gradient(to right bottom, #f4dac5, #e67e22);
+
+  height: 50rem;
+}
+
+.cta .headering-secondary {
+  color: inherit;
+}
+
+.cta-text-box {
+  color: #2e1907;
+}
+
+.cta-text-box .grid {
+  margin-bottom: 0;
+}
+
+.cta-text {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4.8rem;
+  padding: 0 3.2rem;
+}
+
+.cta-form-input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-form-label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form-input {
+  border: none;
+  height: 4rem;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  border-radius: 11px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.cta-form-input::placeholder {
+  color: #aaa;
+}
+
+.cta-form select {
+  height: 4rem;
+  border: none;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(244, 218, 197, 0.345),
+      rgba(230, 125, 34, 0.235)
+    ),
+    url('../content/img/eating.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form-button {
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 11px;
+  background-color: #e67e22;
+}

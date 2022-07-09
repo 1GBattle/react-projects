@@ -1,0 +1,26 @@
+.featured-in-section {
+  margin: 4.8rem 0;
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  margin: 4.4rem 1.6rem 0 0;
+
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.75px;
+  text-align: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 6.4rem;
+}
+
+.featured-in-logo {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 60%;
+}

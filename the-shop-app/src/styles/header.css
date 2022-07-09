@@ -1,0 +1,62 @@
+.header-container {
+  position: absolute;
+  width: 1400px;
+  height: 90px;
+  padding: 12px 12px;
+  margin-top: 12px;
+  background: linear-gradient(to right, #e66465, #9198e5);
+}
+
+.place-holder {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.page-title {
+  text-align: left;
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+.page-description {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 32px;
+  margin-top: 8px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.search-bar-container {
+  position: relative;
+  width: 50px;
+  top: -70%;
+  left: 80%;
+  display: flex;
+  gap: 12px;
+}
+
+.search-bar {
+  height: 24px;
+}
+
+.search-bar-btn {
+  background: none;
+  font-weight: bold;
+  top: -1%;
+}

@@ -1,0 +1,27 @@
+.header-container {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  height: 48px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fbff00;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 48px;
+}
+
+@media (max-width: 1200px) {
+  .header-container {
+    width: 100%;
+  }
+}

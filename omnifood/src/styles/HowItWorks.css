@@ -1,0 +1,98 @@
+.grid {
+  gap: 9.6rem 4.8rem;
+}
+
+.section-how {
+  padding: 6.4rem 0;
+}
+
+.heading-secondary {
+  text-align: center;
+  margin-bottom: 3.2rem;
+  margin-top: 1.6rem;
+}
+
+.step-content-box {
+  align-self: center;
+}
+
+.step-img-box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: '';
+  display: block;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.step-img-box::before {
+  /* used to place element behind img */
+  z-index: -2;
+
+  width: 60%;
+  /* Css trick to add height that is 60% of parent's width */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+}
+
+.step-img-box::after {
+  z-index: -1;
+  width: 50%;
+  padding-bottom: 50%;
+  background-color: #fae5d3;
+}
+
+.step-img {
+  width: 35%;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #bbb;
+}
+
+.step-description {
+  font-size: 2rem;
+  line-height: 1.8;
+}
+
+.content-box-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.content-box-2 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.content-box-3 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.app-screen-1 {
+  grid-column: 2;
+}
+
+.app-screen-2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.app-screen-3 {
+  grid-column: 2;
+  grid-row: 3;
+}
